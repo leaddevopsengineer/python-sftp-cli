@@ -1,0 +1,6 @@
+pylint
+mypy
+black
+pytest
+yapf
+flake8
