@@ -1,21 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  "name": "Python Development",
-  "dockerFile": "Dockerfile",
-  "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-      "ms-python.python",
-      "ms-vscode.vscode-python-extension-pack",
-      "ms-vscode-remote.remote-containers",
-      "ritwickdey.liveserver",
-      "ms-vsliveshare.vsliveshare",
-      "aws-toolkit-vscode.aws-toolkit-vscode",
-      "ms-azuretools.vscode-docker",
-      "ms-python.copilot"
-  ],
-  "runArgs": [
-      "--enable-proposed-api", "ms-vsliveshare.vsliveshare"
-  ],
-  "postCreateCommand": "code-server --install-extension ms-python.python --install-extension ms-vscode.vscode-python-extension-pack --install-extension ms-vscode-remote.remote-containers --install-extension ritwickdey.liveserver --install-extension ms-vsliveshare.vsliveshare --install-extension aws-toolkit-vscode.aws-toolkit-vscode --install-extension ms-azuretools.vscode-docker --install-extension ms-python.copilot",
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/black:2": {},
+		"ghcr.io/devcontainers-contrib/features/coverage-py:2": {},
+		"ghcr.io/devcontainers-contrib/features/flake8:2": {},
+		"ghcr.io/devcontainers-contrib/features/mypy:2": {},
+		"ghcr.io/devcontainers-contrib/features/pylint:2": {}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
+
+// Configure tool-specific properties.
+"customizations": {
+	// Configure properties specific to VS Code.
+	"vscode": {
+	  // Add the IDs of extensions you want installed when the container is created.
+	  "extensions": [
+		"streetsidesoftware.code-spell-checker",
+		"ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode-remote.remote-containers",
+        "ms-vsliveshare.vsliveshare",
+        "ritwickdey.LiveServer",
+        "awslabs.aws-toolkit-vscode",
+        "awslabs.aws-sam-vscode",
+        "ms-vscode.vscode-python-extension-pack",
+        "aws-toolkit-vscode.aws-toolkit-vscode",
+        "ms-azuretools.vscode-docker",
+        "ms-python.copilot"
+	  ]
+	}
+  }
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
