@@ -3,7 +3,12 @@
   "features": {
   },
   "extensions": [
-    "openai.openai-vscode"
+    "openai.openai-vscode",
+    "ritwickdey.liveserver",
+    "ms-vsliveshare.vsliveshare"
 ],
-
+"runArgs": [
+  "--enable-proposed-api", "ms-vsliveshare.vsliveshare"
+],
+"postCreateCommand": "code-server --install-extension ritwickdey.liveserver --install-extension ms-vsliveshare.vsliveshare",
 }
