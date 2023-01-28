@@ -3,7 +3,7 @@
 {
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+	"dockerFile": "Dockerfile",
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/black:2": {},
 		"ghcr.io/devcontainers-contrib/features/coverage-py:2": {},
@@ -19,6 +19,7 @@
 			  "path": "/usr/bin/zsh"
 			}
 		  },
+		  "terminal.integrated.shell.linux": "/usr/bin/zsh",
 		  "terminal.integrated.defaultProfile.linux": "zsh"
     },
 // Configure tool-specific properties.
