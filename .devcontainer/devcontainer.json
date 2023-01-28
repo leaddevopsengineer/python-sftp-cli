@@ -11,11 +11,15 @@
 		"ghcr.io/devcontainers-contrib/features/mypy:2": {},
 		"ghcr.io/devcontainers-contrib/features/pylint:2": {}
 	},
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt; apt-get update && apt-get install -y zsh; sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\";",
+	// "postCreateCommand": "pip3 install --user -r requirements.txt; apt-get update && apt-get install -y zsh; sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\";",
 	"settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh"
+		"terminal.integrated.profiles.linux": {
+			"zsh": {
+			  "path": "/usr/bin/zsh"
+			}
+		  },
+		  "terminal.integrated.defaultProfile.linux": "zsh"
     },
 // Configure tool-specific properties.
 "customizations": {
