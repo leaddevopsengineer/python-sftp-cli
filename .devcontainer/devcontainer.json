@@ -1,14 +1,21 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
+  "name": "Python Development",
+  "dockerFile": "Dockerfile",
+  "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
   },
   "extensions": [
-    "openai.openai-vscode",
-    "ritwickdey.liveserver",
-    "ms-vsliveshare.vsliveshare"
-],
-"runArgs": [
-  "ms-vsliveshare.vsliveshare"
-],
-"postCreateCommand": "code-server --install-extension ritwickdey.liveserver --install-extension ms-vsliveshare.vsliveshare"
+      "ms-python.python",
+      "ms-vscode.vscode-python-extension-pack",
+      "ms-vscode-remote.remote-containers",
+      "ritwickdey.liveserver",
+      "ms-vsliveshare.vsliveshare",
+      "aws-toolkit-vscode.aws-toolkit-vscode",
+      "ms-azuretools.vscode-docker",
+      "ms-python.copilot"
+  ],
+  "runArgs": [
+      "--enable-proposed-api", "ms-vsliveshare.vsliveshare"
+  ],
+  "postCreateCommand": "code-server --install-extension ms-python.python --install-extension ms-vscode.vscode-python-extension-pack --install-extension ms-vscode-remote.remote-containers --install-extension ritwickdey.liveserver --install-extension ms-vsliveshare.vsliveshare --install-extension aws-toolkit-vscode.aws-toolkit-vscode --install-extension ms-azuretools.vscode-docker --install-extension ms-python.copilot",
 }
