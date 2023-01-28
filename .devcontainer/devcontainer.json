@@ -10,5 +10,5 @@
 "runArgs": [
   "--enable-proposed-api", "ms-vsliveshare.vsliveshare"
 ],
-"postCreateCommand": "code-server --install-extension ritwickdey.liveserver --install-extension ms-vsliveshare.vsliveshare",
+"postCreateCommand": "code-server --install-extension ritwickdey.liveserver --install-extension ms-vsliveshare.vsliveshare"
 }
