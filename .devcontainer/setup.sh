@@ -6,14 +6,16 @@ apt-get install -y \
   gnupg2 \
   jq \
   sudo \
-  zsh
+  zsh \
+  software-properties-common 
 
 ## add bits needed for GitHub CLI
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 apt-add-repository https://cli.github.com/packages
 apt-get update
 apt-get install -y \
-  gh
+  gh \ 
+  zsh
 
 ## setup and install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
